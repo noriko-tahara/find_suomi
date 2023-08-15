@@ -54,6 +54,7 @@ Xで専用アカウントを作成して宣伝することを検討していま�
 	・ジャンル別検索
 	・地域別検索
 	・キーワード検索
+		・オートコンプリート
 ・施設詳細
 	・開店時間/定休日
 	・施設Webサイト/SNSアカウント
@@ -83,3 +84,18 @@ Xで専用アカウントを作成して宣伝することを検討していま�
 以下２つは、MVPリリース後に実装しようか検討している段階です。
 ・「LINEで送る」機能
 ・通知機能
+
+■ 使用予定技術
+バックエンド
+・Ruby 3系
+・Ruby on Rails 7系
+・PostgreSQL
+
+フロントエンド
+・Vue.js
+・Tailwinsd CSS + daisyUI
+
+その他
+・Fly.io
+・Stimulus Autocomplete
+・Maps JavaScript API
