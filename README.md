@@ -111,3 +111,6 @@ Xで専用アカウントを作成して宣伝することを検討していま�
 
 ### 画面遷移図
 https://www.figma.com/file/mpgeLXkfll6hqy0W7vDsyJ/Screen-Transition-Diagram?type=design&node-id=0%3A1&mode=design&t=eQTH4c5TuOo84N1a-1
+
+### ER図
+https://gyazo.com/9bd140b7aa56b89146af9ec04488ec59
