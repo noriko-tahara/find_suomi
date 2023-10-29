@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1 class="mb-10 text-center text-3xl flex-col">Login</h1>
+      <%= render 'form', user: @user %>
+      <div class='mt-5 mb-5 text-center text-sm text-gray-500 label-text-alt link link-hover'>
+        <%= link_to 'ユーザー登録する', new_user_path %>
+      </div>
+    </div>
+  </div>
+</div>
