@@ -1,0 +1,14 @@
+<% if flash[:success] %>
+  <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+    <div class="ml-3 text-sm font-medium">
+      <%= flash[:success] %>
+    </div>
+  </div>
+<% end %>
+<% if flash[:error] %>
+  <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+    <div class="ml-3 text-sm font-medium">
+      <%= flash[:error] %>
+    </div>
+  </div>
+<% end %>
