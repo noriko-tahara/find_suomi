@@ -14,7 +14,7 @@ module FindSuomi
       g.assets false
       g.helper false
       g.slip_routes true
-      g.test_framework :rspec
+      g.test_framework :rspec,
         fixtures: false,
         view_specs: false,
         helper_specs: false,
