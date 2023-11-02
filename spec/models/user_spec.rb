@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-
+RSpec.describe User do
   describe 'バリデーション' do
     describe '正常系' do
       it '名前、メールアドレス、パスワード、パスワード確認の入力内容が有効' do
@@ -66,9 +65,7 @@ RSpec.describe User, type: :model do
         it 'パスワード確認の入力が無い場合、無効' do
           user_without_password_confirmation = build(:user, password_confirmation: '')
           expect(user_without_password_confirmation).not_to be_valid
-          expect(user_without_password_confirmation.errors[:password_confirmation]).to eq [
-                  I18n.t('activerecord.errors.models.user.blank'),
-                  I18n.t('activerecord.errors.models.user.attributes.password_confirmation.confirmation')]
+          expect(user_without_password_confirmation.errors[:password_confirmation]).to eq [I18n.t('activerecord.errors.models.user.blank'), I18n.t('activerecord.errors.models.user.attributes.password_confirmation.confirmation')]
         end
 
         it '「パスワード」で入力したものと内容が一致しない場合、無効' do
