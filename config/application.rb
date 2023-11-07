@@ -14,7 +14,11 @@ module FindSuomi
       g.assets false
       g.helper false
       g.slip_routes true
-      g.test_framework false
+      g.test_framework :rspec,
+        fixtures: false,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false
     end
 
     # Configuration for the application, engines, and railties goes here.
@@ -28,6 +32,7 @@ module FindSuomi
     config.i18n.available_locales = %i[ja en]
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
+    config.active_model.i18n_customize_full_message = true
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
