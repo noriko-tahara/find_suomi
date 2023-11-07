@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_07_091236) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_07_091517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_091236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prefecture_id"], name: "index_facilities_on_prefecture_id"
+  end
+
+  create_table "facility_genres", force: :cascade do |t|
+    t.bigint "genre_id", null: false
+    t.bigint "facility_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id", "genre_id"], name: "index_facility_genres_on_facility_id_and_genre_id", unique: true
+    t.index ["facility_id"], name: "index_facility_genres_on_facility_id"
+    t.index ["genre_id"], name: "index_facility_genres_on_genre_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -54,4 +64,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_091236) do
   end
 
   add_foreign_key "facilities", "prefectures"
+  add_foreign_key "facility_genres", "facilities"
+  add_foreign_key "facility_genres", "genres"
 end
