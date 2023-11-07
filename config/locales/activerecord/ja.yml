@@ -8,3 +8,18 @@ ja:
           password: 'パスワード'
           password_confirmation: 'パスワード確認'
           name: '名前'
+    errors:
+      models:
+        user:
+          format: "・%{attribute}: %{message}"
+          blank: '必須項目です。'
+          attributes:
+            name:
+              taken: '既に登録されています。他の名前を入力してください。'
+              too_long: '20文字以下で入力してください。'
+            email:
+              taken: '既に登録されています。他のメールアドレスを入力してください。'
+            password:
+              too_short: '3文字以上で入力してください。'
+            password_confirmation:
+              confirmation: '「パスワード」で入力した内容と一致していません。'
