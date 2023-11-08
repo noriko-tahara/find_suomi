@@ -99,3 +99,6 @@ RSpec/MultipleMemoizedHelpers:
 
 RSpec/NestedGroups:
   Max: 4
+
+Capybara/CurrentPathExpectation:
+  Enabled: false

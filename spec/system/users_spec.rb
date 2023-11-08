@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :system do
-  let(:user) {create(:user)}
+  let(:user) { create(:user) }
 
   describe 'ユーザー新規登録' do
     before do
@@ -131,5 +131,4 @@ RSpec.describe "Users", type: :system do
       end
     end
   end
-
 end
