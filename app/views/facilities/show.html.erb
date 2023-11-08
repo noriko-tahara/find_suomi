@@ -1,0 +1,77 @@
+<div class="card w-5/6 mx-auto mt-5 mb-10 border border-slate-500">
+  <div class="mx-auto px-1 py-5 sm:px-1 max-w-3xl md:rounded-3xl md:px-20">
+    <h1 class="font-semibold text-center text-xl mt-2 mb-2"><%= @facility.name %></h1>
+    <!-- 施設情報詳細 -->
+    <table class="table mb-8 mt-5 mx-auto">
+      <tbody class="w-11/12 m-auto">
+        <tr>
+          <td class="text-normal font-medium leading-tight text-gray-900">紹介</td>
+          <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.description %></td>
+        </tr>
+        <tr>
+          <td class="text-normal font-medium leading-tight text-gray-900">開店時間</td>
+          <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.opening_hour %></td>
+        </tr>
+        <tr>
+          <td class="text-normal font-medium leading-tight text-gray-900">休業日</td>
+          <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.closed_on %></td>
+        </tr>
+        <tr>
+          <td class="text-normal font-medium leading-tight text-gray-900">Website/SNS</td>
+          <td class="mt-1 text-sm font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0">
+            <%= link_to @facility.website, @facility.website, target: "_blank", rel: "noopener" %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-normal font-medium leading-tight text-gray-900">住所</td>
+          <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.address %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mx-auto px-1 py-1 border sm:px-1 max-w-3xl items-center">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Googleマップ表示用の Javascript -->
+<script>
+  function initMap(){
+    // 地図の位置情報(緯度・経度)を取得
+    let mapPosition = {lat: <%= @facility.latitude || 0 %> , lng: <%= @facility.longitude || 0 %> };
+    let map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: mapPosition
+    });
+    let transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    let contentString = '住所<%= @facility.address %>';
+    let infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    let marker = new google.maps.Marker({
+      position: mapPosition,
+      map: map,
+      title: contentString
+    });
+
+    marker.addListener('click', function(){
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
+
+<style>
+  #map {
+    height: 300px;
+    width: 100%;
+  }
+</style>
+
+
