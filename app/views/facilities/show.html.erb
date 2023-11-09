@@ -32,6 +32,9 @@
       <div id="map"></div>
     </div>
   </div>
+  <button class="flex justify-center mt-5 mb-5" >
+    <%= link_to t('.back_to_index_page'), facilities_path, class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
+  </button>
 </div>
 
 <!-- Googleマップ表示用の Javascript -->
@@ -40,7 +43,7 @@
     // 地図の位置情報(緯度・経度)を取得
     let mapPosition = {lat: <%= @facility.latitude || 0 %> , lng: <%= @facility.longitude || 0 %> };
     let map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
+      zoom: 16,
       center: mapPosition
     });
     let transitLayer = new google.maps.TransitLayer();
