@@ -51,8 +51,17 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# 多言語化対応
 gem "rails-i18n"
+
+# 認証機能
 gem "sorcery"
+
+# 環境変数の設定
+gem "dotenv-rails"
+
+# 地図表示
+gem "geocoder"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
