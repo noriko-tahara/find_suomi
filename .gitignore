@@ -34,3 +34,5 @@
 !/app/assets/builds/.keep
 
 /.env
+
+/db/fixtures/csv_files
