@@ -3,6 +3,9 @@ ja:
     register: '登録'
     login: 'ログイン'
     logout: 'ログアウト'
+  facilities:
+    show:
+      back_to_index_page: '一覧へ戻る'
   users:
     new:
       title: 'ユーザー登録'
