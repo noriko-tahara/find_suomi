@@ -20,4 +20,14 @@ csv.each do |row|
     s.longitude = result.longitude
     s.prefecture_id = prefecture.id
   end
+
+  facility = Facility.find_by(id: row['id'])
+  genres = Genre.where(name: row['genre'].split(' '))
+
+  genres.each do |genre|
+    FacilityGenre.seed do |s2|
+      s2.facility_id = facility.id
+      s2.genre_id = genre.id
+    end
+  end
 end

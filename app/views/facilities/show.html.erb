@@ -1,6 +1,14 @@
 <div class="card w-5/6 mx-auto mt-5 mb-10 border border-slate-500">
   <div class="mx-auto px-1 py-5 sm:px-1 max-w-3xl md:rounded-3xl md:px-20">
     <h1 class="font-semibold text-center text-xl mt-2 mb-2"><%= @facility.name %></h1>
+    <!-- ジャンル表示 -->
+    <h2 class="mb-1 py-1 text-right">
+      <% @facility.genres.each do |genre| %>
+        <span class="inline-flex items-center rounded-md bg-gray-50 me-1 px-2.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10" >
+          <%= genre.name %>
+        </span>
+      <% end %>
+    </h2>
     <!-- 施設情報詳細 -->
     <table class="table mb-8 mt-5 mx-auto">
       <tbody class="w-11/12 m-auto">
@@ -43,7 +51,7 @@
     // 地図の位置情報(緯度・経度)を取得
     let mapPosition = {lat: <%= @facility.latitude || 0 %> , lng: <%= @facility.longitude || 0 %> };
     let map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 16,
+      zoom: 15,
       center: mapPosition
     });
     let transitLayer = new google.maps.TransitLayer();

@@ -1,8 +1,16 @@
 <div class="card w-4/5 bg-base-100 mx-auto mb-10 border border-slate-500">
   <div class="card-body">
-    <div class="font-semibold text-xl mb-2">
+    <div class="font-semibold text-center text-xl mb-1">
       <%= link_to facility.name, facility_path(facility) %>
     </div>
+    <!-- ジャンル表示 -->
+    <h5 class="mb-1 text-right">
+      <% facility.genres.each do |genre| %>
+        <span class="inline-flex items-center rounded-md bg-gray-50 me-1 px-2.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10" >
+          <%= genre.name %>
+        </span>
+      <% end %>
+    </h5>
     <table class="mx-auto">
       <tbody>
         <tr>
