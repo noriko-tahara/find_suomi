@@ -1,0 +1,20 @@
+<!-- ブックマーク一覧 -->
+<div class="container sm px-4 md:container md:mx-auto">
+  <div class="grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+    <div class="text-center">
+      <h1 class="font-semibold"><%= t('.title') %></h1>
+    </div>
+    <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+      <% if @bookmark_facilities.present? %>
+        <div class="flex flex-col justify-between flex-1">
+          <%= render partial: 'facility', collection: @bookmark_facilities %>
+        </div>
+      <% else %>
+        <p class="text-center"><%= t('.no_result') %></p>
+      <% end %>
+    </div>
+    <button class="flex justify-center mt-5 mb-5" >
+      <%= link_to t('.to_index_page'), facilities_path, class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
+    </button>
+  </div>
+</div>

@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   get 'sign_up', to: 'users#new'
 
-  resources :facilities, only: %i[index show]
+  resources :bookmarks, only: %i[create destroy]
+  resources :facilities, only: %i[index show]  do
+    collection do
+      get :bookmarks
+    end
+  end
   resources :users, only: %i[new create]
 
 end

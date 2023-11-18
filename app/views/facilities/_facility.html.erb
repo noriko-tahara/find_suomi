@@ -3,6 +3,13 @@
     <div class="font-semibold text-center text-xl mb-1">
       <%= link_to facility.name, facility_path(facility) %>
     </div>
+    <span class="absolute top-0 right-0 w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+      <% if logged_in? %>
+        <%= render 'bookmark_button', { facility: facility } %>
+      <% else %>
+        <%= render 'before_login_bookmark' %>
+      <% end %>
+    </span>
     <!-- ジャンル表示 -->
     <h5 class="mb-1 text-right">
       <% facility.genres.each do |genre| %>
