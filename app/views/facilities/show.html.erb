@@ -1,6 +1,13 @@
 <div class="card w-5/6 mx-auto mt-5 mb-10 border border-slate-500">
   <div class="mx-auto px-1 py-5 sm:px-1 max-w-3xl md:rounded-3xl md:px-20">
     <h1 class="font-semibold text-center text-xl mt-2 mb-2"><%= @facility.name %></h1>
+    <span class="absolute top-0 right-0 w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+      <% if logged_in? %>
+        <%= render 'bookmark_button', { facility: @facility } %>
+      <% else %>
+        <%= render 'before_login_bookmark' %>
+      <% end %>
+    </span>
     <!-- ジャンル表示 -->
     <h2 class="mb-1 py-1 text-right">
       <% @facility.genres.each do |genre| %>

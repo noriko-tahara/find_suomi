@@ -6,6 +6,10 @@ ja:
   facilities:
     show:
       back_to_index_page: '一覧へ戻る'
+    bookmarks:
+      title: 'ブックマーク一覧'
+      no_result: 'ブックマーク中の施設がありません'
+      to_index_page: '施設一覧へ'
   users:
     new:
       title: 'ユーザー登録'

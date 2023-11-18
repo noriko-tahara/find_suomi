@@ -5,6 +5,7 @@ class Facility < ApplicationRecord
   belongs_to :prefecture
 
   has_many :bookmarks, dependent: :destroy
+  has_many :users, through: :bookmarks
   has_many :facility_genres, dependent: :destroy
   has_many :genres, through: :facility_genres
 
