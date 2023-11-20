@@ -2,7 +2,8 @@ class FacilitiesController < ApplicationController
   skip_before_action :require_login
 
   def index
-    @facilities = Facility.all
+    @search_facilities_form = SearchFacilitiesForm.new(search_params)
+    @facilities = @search_facilities_form.search.order(name: :asc)
   end
 
   def bookmarks
@@ -11,5 +12,9 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+  end
+
+  def search_params
+    params[:q]&.permit(:name, :description, :address, :genre_id, :prefecture_id)
   end
 end
