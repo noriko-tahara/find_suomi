@@ -1,8 +1,13 @@
-<%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
-  <div class="flex mx-3">
-    <%= f.search_field :name, placeholder: '施設名 地域 キーワード', class: 'input input-bordered input-info mr-2' %>
-  </div>
-  <div class="actions text-center">
-    <%= f.submit '検索', name: nil, class: 'btn btn-outline' %>
-  </div>
-<% end %>
+<div class="form-control w-full max-w-xs space-y-4 mt-4">
+  <%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
+    <div>
+      <label class="label">
+        <span class="text-base label-text">キーワード検索</span>
+      </label>
+      <%= f.search_field :name, placeholder: '店舗名 地域 キーワード', class: 'input input-bordered input-sm w-full max-w-xs' %>
+    </div>
+    <div class="text-center mt-2">
+      <%= f.submit '検索', name: nil, class: 'btn btn-neutral btn-sm' %>
+    </div>
+  <% end %>
+</div>
