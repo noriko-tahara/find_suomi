@@ -1,5 +1,9 @@
 FactoryBot.define do
   factory :genre do
-    name { "MyString" }
+    name { "カフェ" }
+
+    trait :sauna do
+      name { "サウナ" }
+    end
   end
 end

@@ -1,6 +1,5 @@
-<div class="top-wrapper">
-  <div class="top-inner-text">
-    <h1>Find Suomi</h1>
-    <%= link_to '施設一覧', facilities_path %>
-  </div>
+<div class="relative flex flex-col justify-center items-center mx-auto w-full">
+  <h1 class="text-3xl font-semibold text-center text-gray-700">検索する</h1>
+  <%= render 'shared/dropdown_search_form' %>
+  <%= render 'shared/keyword_search_form' %>
 </div>
