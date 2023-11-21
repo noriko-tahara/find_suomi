@@ -14,6 +14,8 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
   end
 
+  private
+
   def search_params
     params[:q]&.permit(:name, :description, :address, :genre_id, :prefecture_id)
   end
