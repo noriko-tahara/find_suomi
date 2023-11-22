@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User do
+RSpec.describe User, type: :model do
   describe 'バリデーション' do
     describe '正常系' do
       it '名前、メールアドレス、パスワード、パスワード確認の入力内容が有効' do
