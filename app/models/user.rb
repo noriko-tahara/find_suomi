@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_facilities, through: :bookmarks, source: :facility
+  has_many :reviews, dependent: :destroy
 
   validates :name, uniqueness: true, presence: true, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
