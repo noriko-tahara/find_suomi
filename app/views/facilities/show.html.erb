@@ -49,7 +49,25 @@
       </div>
     </div>
   </div>
-  <button class="flex justify-center mt-5 mb-5" >
+
+  <!-- 口コミ表示 -->
+  <h2 class="text-center font-semibold mb-3">口コミ</h2>
+  <% if logged_in? %>
+    <!-- 口コミ一覧 -->
+    <%= render 'reviews/reviews', { reviews: @reviews } %>
+
+    <!-- 口コミフォーム -->
+    <%= render 'reviews/form', { facility: @facility, review: @review } %>
+  <% else %>
+    <div class="flex justify-center text-center w-1/2 mx-auto">
+      <%= link_to login_path, class: 'btn no-animation btn-sm' do %>
+        <p>ログイン後 閲覧できます</p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <!-- 検索結果一覧に戻る -->
+  <button class="flex justify-center mt-10 mb-5" >
     <%= link_to t('.back_to_index_page'), :back, class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
   </button>
 </div>

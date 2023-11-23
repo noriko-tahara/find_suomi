@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def bookmark?(facility)
     bookmark_facilities.include?(facility)
   end
+
+  def own?(object)
+    id == object.user_id
+  end
 end

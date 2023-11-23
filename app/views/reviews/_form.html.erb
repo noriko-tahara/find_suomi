@@ -1,0 +1,9 @@
+<div class="row mt-5 mb-3">
+  <div class="flex items-center max-auto justify-center flex-1 h-full mx-auto">
+    <%= form_with model: review, url: [facility, review], local: true do |f| %>
+      <%= f.label :body, class: 'text-center' %>
+      <%= f.text_area :body, class: 'textarea textarea-bordered form-control mb-3', id: 'js-new-review-body', row: 4, placeholder: Review.human_attribute_name(:body) %>
+      <%= f.submit t('defaults.post'), class: 'btn btn-primary btn-sm' %>
+    <% end %>
+  </div>
+</div>

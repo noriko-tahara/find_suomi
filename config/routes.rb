@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :bookmarks, only: %i[create destroy]
   resources :facilities, only: %i[index show]  do
+    resources :reviews, only: %i[create edit update destroy], shallow: true
     collection do
       get :bookmarks
     end

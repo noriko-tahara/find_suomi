@@ -9,6 +9,8 @@ ja:
           password: 'パスワード'
           password_confirmation: 'パスワード確認'
           name: '名前'
+        review:
+          body: '口コミ'
     errors:
       models:
         user:
