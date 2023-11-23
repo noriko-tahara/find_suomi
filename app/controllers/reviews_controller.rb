@@ -9,6 +9,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    review = current_user.reviews.find(params[:id])
+    review.destroy!
+    redirect_to facility_path(review.facility), success: t('defaults.message.deleted', item: Review.model_name.human)
+  end
+
   private
 
   def review_params
