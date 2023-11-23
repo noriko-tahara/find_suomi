@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
 
+  def new
+    @facility = Facility.find(params[:facility_id])
+    @review = Review.new
+  end
+  
   def create
     review = current_user.reviews.build(review_params)
     if review.save

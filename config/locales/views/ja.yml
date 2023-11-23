@@ -7,15 +7,15 @@ ja:
     edit: '編集'
     delete: '削除'
     update: '更新する'
+    back: '前のページに戻る'
     message:
       posted: "%{item}を投稿しました"
       not_posted: "%{item}を投稿できませんでした"
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新できませんでした"
       confirm_delete: "削除しますか？"
+      deleted: "削除しました"
   facilities:
-    show:
-      back_to_index_page: '一覧へ戻る'
     bookmarks:
       title: 'ブックマーク一覧'
       no_result: 'ブックマーク中の施設がありません'

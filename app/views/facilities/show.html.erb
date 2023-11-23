@@ -56,8 +56,10 @@
     <!-- 口コミ一覧 -->
     <%= render 'reviews/reviews', { reviews: @reviews } %>
 
-    <!-- 口コミフォーム -->
-    <%= render 'reviews/form', { facility: @facility, review: @review } %>
+    <!-- 口コミ投稿 -->
+    <button class="flex justify-center mt-10 mb-5" >
+      <%= link_to '口コミを投稿する',  new_facility_review_path(@facility), class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
+    </button>
   <% else %>
     <div class="flex justify-center text-center w-1/2 mx-auto">
       <%= link_to login_path, class: 'btn no-animation btn-sm' do %>
@@ -67,9 +69,7 @@
   <% end %>
 
   <!-- 検索結果一覧に戻る -->
-  <button class="flex justify-center mt-10 mb-5" >
-    <%= link_to t('.back_to_index_page'), :back, class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
-  </button>
+  <%= render 'shared/back_to_previous_page' %>
 </div>
 
 <!-- Googleマップ表示用の Javascript -->
