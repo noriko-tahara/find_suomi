@@ -21,25 +21,25 @@
       <table class="table mb-8 mt-5 mx-auto">
         <tbody class="w-11/12 m-auto">
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900">紹介</td>
+            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:description)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.description %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900">開店時間</td>
+            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.opening_hour %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900">休業日</td>
+            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.closed_on %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900">Website/SNS</td>
+            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:website)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0">
               <%= link_to @facility.website, @facility.website, target: "_blank", rel: "noopener" %>
             </td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900">住所</td>
+            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.address %></td>
           </tr>
         </tbody>
@@ -51,19 +51,19 @@
   </div>
 
   <!-- 口コミ表示 -->
-  <h2 class="text-center font-semibold mb-3">口コミ</h2>
+  <h2 class="text-center font-semibold mb-3"><%= t('activerecord.models.review') %></h2>
   <% if logged_in? %>
     <!-- 口コミ一覧 -->
     <%= render 'reviews/reviews', { reviews: @reviews } %>
 
     <!-- 口コミ投稿 -->
     <button class="flex justify-center mt-10 mb-5" >
-      <%= link_to '口コミを投稿する',  new_facility_review_path(@facility), class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
+      <%= link_to t('reviews.post_review'),  new_facility_review_path(@facility), class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
     </button>
   <% else %>
     <div class="flex justify-center text-center w-1/2 mx-auto">
       <%= link_to login_path, class: 'btn no-animation btn-sm' do %>
-        <p>ログイン後 閲覧できます</p>
+        <p><%= t('reviews.login_to_post_reviews') %></p>
       <% end %>
     </div>
   <% end %>

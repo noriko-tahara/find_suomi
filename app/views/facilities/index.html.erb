@@ -7,9 +7,7 @@
       </div>
       <%= render @facilities %>
     <% else %>
-      <p class='text-center pb-4'>
-        該当する施設はありませんでした
-      </p>
+      <p class='text-center pb-4'><%= t('.no_result') %></p>
     <% end %>
   </div>
 </div>

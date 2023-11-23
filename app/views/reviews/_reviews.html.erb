@@ -3,7 +3,7 @@
     <% if @reviews.present? %>
       <%= render @reviews %>
     <% else %>
-      <p class="text-center">まだ口コミがありません</p>
+      <p class="text-center"><%= t('reviews.no_result') %></p>
     <% end %>
   </div>
 </div>

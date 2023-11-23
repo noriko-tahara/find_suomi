@@ -16,10 +16,20 @@ ja:
       confirm_delete: "削除しますか？"
       deleted: "削除しました"
   facilities:
+    index:
+      no_result: '該当する施設はありませんでした'
     bookmarks:
       title: 'ブックマーク一覧'
       no_result: 'ブックマーク中の施設がありません'
       to_index_page: '施設一覧へ'
+  reviews:
+    post_review: '口コミを投稿する'
+    no_result: 'まだ口コミがありません'
+    login_to_post_reviews: 'ログイン後 閲覧できます'
+    new:
+      title: '口コミ投稿'
+    edit:
+      title: '口コミ編集'
   users:
     new:
       title: 'ユーザー登録'
