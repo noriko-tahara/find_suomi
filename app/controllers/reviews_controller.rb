@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def new
     @facility = Facility.find(params[:facility_id])
     @review = Review.new

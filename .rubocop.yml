@@ -78,6 +78,9 @@ Style/StringLiterals:
 Style/SymbolArray:
   Enabled: false
 
+Rails/ActionOrder:
+  Enabled: false
+
 Rails/FilePath:
   Exclude:
     - 'spec/**/*'
