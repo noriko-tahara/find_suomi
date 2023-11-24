@@ -8,6 +8,7 @@ class Facility < ApplicationRecord
   has_many :users, through: :bookmarks
   has_many :facility_genres, dependent: :destroy
   has_many :genres, through: :facility_genres
+  has_many :reviews, dependent: :destroy
 
   validates :name, presence: true
   validates :address, presence: true

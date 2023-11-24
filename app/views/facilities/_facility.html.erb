@@ -21,15 +21,15 @@
     <table class="mx-auto">
       <tbody>
         <tr>
-          <td class="text-sm font-medium leading-tight text-gray-900">住所</td>
+          <td class="text-sm font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
           <td class="mt-1 text-xs font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.address %></td>
         </tr>
         <tr>
-          <td class="text-sm font-medium leading-tight text-gray-900">開店時間</td>
+          <td class="text-sm font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
           <td class="mt-1 text-xs font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.opening_hour %></td>
         </tr>
         <tr>
-          <td class="text-sm font-medium leading-tight text-gray-900">定休日</td>
+          <td class="text-sm font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
           <td class="mt-1 text-xs font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.closed_on %></td>
         </tr>
       </tbody>

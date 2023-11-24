@@ -2,12 +2,22 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      review: '口コミ'
     attributes:
+        facility:
+          name: '施設名'
+          description: '紹介'
+          opening_hour: '開店時間'
+          closed_on: '休業日'
+          website: 'Website/SNS'
+          address: '住所'
         user:
           email: 'メールアドレス'
           password: 'パスワード'
           password_confirmation: 'パスワード確認'
           name: '名前'
+        review:
+          body: '本文'
     errors:
       models:
         user:
@@ -23,3 +33,9 @@ ja:
               too_short: '3文字以上で入力してください。'
             password_confirmation:
               confirmation: '「パスワード」で入力した内容と一致していません。'
+        review:
+          format: "・%{attribute}: %{message}"
+          blank: '必須項目です。'
+          attributes:
+            body:
+              too_long: '65,535文字以下で入力してください。'

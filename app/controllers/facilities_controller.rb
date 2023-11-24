@@ -12,6 +12,8 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+    @review = Review.new
+    @reviews = @facility.reviews.includes(:user).order(created_at: :desc)
   end
 
   private
