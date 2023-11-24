@@ -36,10 +36,10 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:body).merge(facility_id: params[:facility_id])
+    params.require(:review).permit(:body, :review_image, :review_image_cache).merge(facility_id: params[:facility_id])
   end
 
   def update_review_params
-    params.require(:review).permit(:body)
+    params.require(:review).permit(:body, :review_image, :review_image_cache)
   end
 end
