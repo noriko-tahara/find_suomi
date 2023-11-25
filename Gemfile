@@ -69,6 +69,10 @@ gem "seed-fu"
 # 検索機能
 gem "ransack"
 
+# 画像投稿機能
+gem "carrierwave", "~> 2.2", ">= 2.2.4"
+gem "mini_magick"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "byebug"

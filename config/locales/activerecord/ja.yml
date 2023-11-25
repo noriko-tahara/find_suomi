@@ -18,6 +18,7 @@ ja:
           name: '名前'
         review:
           body: '本文'
+          review_image: '画像'
     errors:
       models:
         user:
