@@ -6,7 +6,7 @@ ja:
     post: '投稿'
     edit: '編集'
     delete: '削除'
-    update: '更新する'
+    update: '更新'
     back: '前のページに戻る'
     message:
       posted: "%{item}を投稿しました"
@@ -26,7 +26,7 @@ ja:
     show:
       title: 'プロフィール'
     edit:
-      title: 'プロフィール編集'
+      title: 'ユーザー情報編集'
   reviews:
     post_review: '口コミを投稿する'
     no_result: 'まだ口コミがありません'
