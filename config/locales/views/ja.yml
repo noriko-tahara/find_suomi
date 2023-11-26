@@ -25,11 +25,11 @@ ja:
       to_index_page: '施設一覧へ'
   password_resets:
     new:
-      title: 'パスワードリセット申請'
+      title: 'パスワード変更申請'
     edit:
-      title: 'パスワードリセット'
+      title: 'パスワード変更'
     create:
-      success: 'パスワードリセットメールを送信しました'
+      success: 'パスワード変更メールを送信しました'
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードを変更できませんでした'
@@ -55,7 +55,7 @@ ja:
       fail: 'ユーザー登録に失敗しました'
   user_mailer:
     reset_password:
-      subject: 'パスワードリセット'
+      subject: 'パスワード変更'
   user_sessions:
     new:
       title: 'ログイン'
