@@ -3,7 +3,7 @@
     <div class="flex flex-col text-center w-full mb-8">
       <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
     </div>
-    <%= form_with model: @user, url: password_reset_path(@token), local: true |f| %>
+    <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="my-6">
         <%= f.label :email, User.human_attribute_name(:email), class: 'mb-1 block text-sm font-medium text-gray-700'%>
