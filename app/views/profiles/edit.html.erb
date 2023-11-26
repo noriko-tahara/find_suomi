@@ -1,0 +1,34 @@
+<div class="p-2 w-full">
+  <div class="mx-auto max-w-xs">
+    <div class="flex flex-col text-center w-full mb-8">
+      <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
+    </div>
+    <%= form_with model: @user, url: profile_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="my-3", data-controller="preview-image">
+        <%= f.label :avatar, class: 'mb-1 block text-sm font-medium text-gray-700' %>
+        <%= f.file_field :avatar, accept: 'image/*',
+              data: { action: 'change->preview-image#preview' },
+              class: 'block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none
+                file:bg-gray-50 file:border-0
+                file:bg-gray-100 file:me-4
+                file:py-2 file:px-4'%>
+        <%= f.hidden_field :avatar_cache %>
+      </div>
+      <div class="my-3">
+        <%= image_tag @user.avatar.url, id: 'preview', size: '150x150' %>
+      </div>
+      <div class="my-6">
+        <%= f.label :name, class: 'mb-1 block text-sm font-medium text-gray-700'%>
+        <%= f.text_field :name, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
+      </div>
+      <div class="my-6">
+        <%= f.label :email, class: 'mb-1 block text-sm font-medium text-gray-700'%>
+        <%= f.email_field :email, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
+      </div>
+
+      <%= f.submit t('defaults.update'), class: 'btn btn-primary btn-sm flex mx-auto max-w-md items-center justify-center text-center px-10 mt-10' %>
+    <% end %>
+  </div>
+</div>
+

@@ -6,7 +6,7 @@ ja:
     post: '投稿'
     edit: '編集'
     delete: '削除'
-    update: '更新する'
+    update: '更新'
     back: '前のページに戻る'
     message:
       posted: "%{item}を投稿しました"
@@ -22,6 +22,11 @@ ja:
       title: 'ブックマーク一覧'
       no_result: 'ブックマーク中の施設がありません'
       to_index_page: '施設一覧へ'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'ユーザー情報編集'
   reviews:
     post_review: '口コミを投稿する'
     no_result: 'まだ口コミがありません'
