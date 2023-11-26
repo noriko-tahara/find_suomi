@@ -73,6 +73,9 @@ gem "ransack"
 gem "carrierwave", "~> 2.2", ">= 2.2.4"
 gem "mini_magick"
 
+# 環境毎の定数管理
+gem "config"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "byebug"
@@ -85,8 +88,10 @@ group :development, :test do
   # Test
   gem "factory_bot_rails"
   gem "rspec-rails"
-
   gem "launchy"
+
+  # email
+  gem "letter_opener_web"
 end
 
 group :development do
