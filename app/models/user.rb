@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  mount_uploader :avatar, AvatarUploader
 
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_facilities, through: :bookmarks, source: :facility
