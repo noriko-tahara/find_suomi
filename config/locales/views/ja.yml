@@ -15,6 +15,9 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       confirm_delete: "削除しますか？"
       deleted: "削除しました"
+    user_mailer:
+      reset_password:
+        subject: 'パスワードリセット'
   facilities:
     index:
       no_result: '該当する施設はありませんでした'
