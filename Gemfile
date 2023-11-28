@@ -76,6 +76,10 @@ gem "mini_magick"
 # 環境毎の定数管理
 gem "config"
 
+# AWSとの接続
+gem "aws-sdk-s3", require: false
+gem "fog-aws"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "byebug"
