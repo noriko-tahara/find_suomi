@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  mount LetterOpenerWeb::Engine, at: "letter_opener" if Rails.env.development?
   # Defines the root path route ("/")
   root "static_pages#top"
 
@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: %i[new create]
   resource :profile, only: %i[show edit update]
+  resources :password_resets, only: %i[new create edit update]
 
 end

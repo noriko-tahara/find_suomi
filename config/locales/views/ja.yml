@@ -4,10 +4,12 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     post: '投稿'
+    send: '送信'
     edit: '編集'
     delete: '削除'
     update: '更新'
     back: '前のページに戻る'
+    password_reset: 'パスワード再設定手続きのご案内'
     message:
       posted: "%{item}を投稿しました"
       not_posted: "%{item}を投稿できませんでした"
@@ -22,6 +24,16 @@ ja:
       title: 'ブックマーク一覧'
       no_result: 'ブックマーク中の施設がありません'
       to_index_page: '施設一覧へ'
+  password_resets:
+    new:
+      title: 'パスワード変更申請'
+    edit:
+      title: 'パスワード変更'
+    create:
+      success: 'パスワード変更メールを送信しました'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードを変更できませんでした'
   profiles:
     show:
       title: 'プロフィール'
@@ -42,6 +54,9 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+  user_mailer:
+    reset_password:
+      subject: 'パスワード変更'
   user_sessions:
     new:
       title: 'ログイン'

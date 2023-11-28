@@ -5,7 +5,7 @@
       <%= f.text_field :email, id: 'email', class: 'input input-bordered', autocomplete: 'email' %>
       <%= f.label :password, User.human_attribute_name(:password), class: 'my-1 text-base'  %>
       <%= f.password_field :password, id: 'password', class: 'input input-bordered', autocomplete: 'off' %>
-      <%= link_to t('user_sessions.new.password_forget'), '#', class: 'mt-1 label-text-alt link link-hover text-gray-500' %>
+      <%= link_to t('user_sessions.new.password_forget'), new_password_reset_path, class: 'mt-1 label-text-alt link link-hover text-gray-500' %>
     </div>
     <div class="actions mt-5 text-center">
       <%= f.submit t('defaults.login'), class: 'btn btn-wide btn-primary' %>
