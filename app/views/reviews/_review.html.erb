@@ -17,7 +17,7 @@
       <p class="mx-auto text-base text-sm leading-relaxed text-gray-500">
         <%= review.body %>
       </p>
-      <%= image_tag review.review_image_url(:thumb), class: 'card-img-top', size: '150x150'if review.review_image.present? %>
+      <%= image_tag review.review_image_url, class: 'card-img-top', size: '150x150'if review.review_image.present? %>
       <h2 class="mt-4 text-xs font-semibold tracking-widest text-blue-500">
         <%= review.user.name %>
         <span class="text-xs text-gray-200"><%= review.updated_at.strftime('%Y/%m/%d %H:%M')%></span>
