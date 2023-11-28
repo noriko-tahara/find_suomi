@@ -71,7 +71,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   host = 'find-suomi.fly.dev'
-  config.action_mailer.default_url_optifzons = { protocol: 'https', host: host }
+  config.action_mailer.default_url_options = { protocol: 'https', host: host }
 
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
