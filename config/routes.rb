@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   get 'sign_up', to: 'users#new'
 
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get 'terms_of_use', to: 'static_pages#terms_of_use'
+
   resources :bookmarks, only: %i[create destroy]
   resources :facilities, only: %i[index show]  do
     resources :reviews, shallow: true
