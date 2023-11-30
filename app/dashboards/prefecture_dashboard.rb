@@ -22,17 +22,16 @@ class PrefectureDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    facilities
     name
-    created_at
+    facilities
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    facilities
     name
+    facilities
     created_at
     updated_at
   ].freeze
@@ -41,8 +40,8 @@ class PrefectureDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    facilities
     name
+    facilities
   ].freeze
 
   # COLLECTION_FILTERS

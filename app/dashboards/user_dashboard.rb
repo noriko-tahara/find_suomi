@@ -21,6 +21,7 @@ class UserDashboard < Administrate::BaseDashboard
     reset_password_token_expires_at: Field::DateTime,
     reviews: Field::HasMany,
     salt: Field::String,
+    role: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -32,7 +33,9 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    access_count_to_reset_password_page
+    name
+    email
+    role
     avatar
     bookmark_facilities
   ].freeze
@@ -48,6 +51,7 @@ class UserDashboard < Administrate::BaseDashboard
     crypted_password
     email
     name
+    role
     reset_password_email_sent_at
     reset_password_token
     reset_password_token_expires_at
@@ -68,6 +72,7 @@ class UserDashboard < Administrate::BaseDashboard
     crypted_password
     email
     name
+    role
     reset_password_email_sent_at
     reset_password_token
     reset_password_token_expires_at
