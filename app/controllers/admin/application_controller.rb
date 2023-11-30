@@ -15,7 +15,7 @@ module Admin
 
     def check_admin
       unless current_user.admin?
-        flash[:error] = t('defaults.message.not_authorized')
+        flash[:warning] = t('defaults.message.not_authorized')
         redirect_to root_path
       end
     end

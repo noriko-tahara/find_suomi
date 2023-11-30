@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     if review.save
       redirect_to facility_path(review.facility), success: t('defaults.message.posted', item: Review.model_name.human)
     else
-      redirect_to facility_path(review.facility), danger: t('defaults.message.not_posted', item: Review.model_name.human)
+      redirect_to facility_path(review.facility), error: t('defaults.message.not_posted', item: Review.model_name.human)
     end
   end
 
