@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :bookmarks
+      resources :facilities
+      resources :facility_genres
+      resources :genres
+      resources :prefectures
+      resources :reviews
+      resources :users
+
+      root to: "facilities#index"
+    end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   mount LetterOpenerWeb::Engine, at: "letter_opener" if Rails.env.development?
   # Defines the root path route ("/")
