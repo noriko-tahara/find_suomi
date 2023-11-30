@@ -12,7 +12,7 @@ class FacilityGenreDashboard < Administrate::BaseDashboard
     facility: Field::BelongsTo,
     genre: Field::BelongsTo,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
