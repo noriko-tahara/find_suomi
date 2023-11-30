@@ -6,10 +6,18 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_admin
+    before_action :require_login
+    before_action :check_admin
 
-    def authenticate_admin
-      # TODO Add authentication logic here.
+    # def authenticate_admin
+    #   # TODO Add authentication logic here.
+    # end
+
+    def check_admin
+      unless current_user.admin?
+        flash[:error] = t('defaults.message.not_authorized')
+        redirect_to root_path
+      end
     end
 
     # Override this value to specify the number of elements to display at a time
