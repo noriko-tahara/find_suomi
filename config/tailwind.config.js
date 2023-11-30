@@ -15,7 +15,7 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ["lofi"],
+    themes: ["winter"],
   },
   plugins: [
     require('@tailwindcss/forms'),
