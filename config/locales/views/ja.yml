@@ -17,6 +17,7 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       confirm_delete: "削除しますか？"
       deleted: "削除しました"
+      not_authorized: 'アクセス権限がありません'
   facilities:
     index:
       no_result: '該当する施設はありませんでした'

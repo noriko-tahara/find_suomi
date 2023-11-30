@@ -80,6 +80,9 @@ gem "config"
 gem "aws-sdk-s3", require: false
 gem "fog-aws"
 
+# 管理画面
+gem "administrate"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "byebug"
@@ -92,7 +95,6 @@ group :development, :test do
   # Test
   gem "factory_bot_rails"
   gem "rspec-rails"
-  gem "launchy"
 
   # email
   gem "letter_opener_web"
