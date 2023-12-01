@@ -1,13 +1,13 @@
-<div class="form-control w-full max-w-xs space-y-4 mt-4">
+<div class="form-control w-full max-w-xs space-y-4 my-8">
   <%= form_with model: @search_facility_form, scope: :q, url: facilities_path, method: :get do |f| %>
     <div>
       <label class="label">
         <span class="text-base label-text">キーワード検索</span>
       </label>
-      <%= f.search_field :name, placeholder: '店舗名 地域 キーワード', class: 'input input-bordered input-sm w-full max-w-xs' %>
+      <%= f.search_field :name, placeholder: '店舗名 地域 キーワード', class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
     </div>
-    <div class="text-center mt-2">
-      <%= f.submit '検索', name: nil, class: 'btn btn-neutral btn-sm', id: 'keyword_search' %>
+    <div class="text-center mt-4">
+      <%= f.submit '検索', name: nil, class: 'btn btn-neutral btn-sm text-white', id: 'keyword_search' %>
     </div>
   <% end %>
 </div>
