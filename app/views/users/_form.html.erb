@@ -2,25 +2,25 @@
   <%= form_with model: user, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="flex flex-col">
-      <div class="form-group">
-        <%= f.label :name, User.human_attribute_name(:name) %>
-        <%= f.text_field :name, class: 'form-control' %>
+      <div class="my-3">
+        <%= f.label :name, User.human_attribute_name(:name), class: 'my-1 block text-sm font-medium text-gray-950' %>
+        <%= f.text_field :name, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
       </div>
-      <div class="form-group">
-        <%= f.label :email, User.human_attribute_name(:email) %>
-        <%= f.email_field :email, class: 'form-control' %>
+      <div class="my-3">
+        <%= f.label :email, User.human_attribute_name(:email), class: 'my-1 block text-sm font-medium text-gray-950' %>
+        <%= f.email_field :email, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
       </div>
-      <div class="form-group">
-        <%= f.label :password, User.human_attribute_name(:password) %>
-        <%= f.password_field :password, class: 'form-control' %>
+      <div class="my-3">
+        <%= f.label :password, User.human_attribute_name(:password), class: 'my-1 block text-sm font-medium text-gray-950' %>
+        <%= f.password_field :password, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
       </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <div class="my-3">
+        <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation), class: 'my-1 block text-sm font-medium text-gray-950' %>
+        <%= f.password_field :password_confirmation, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
       </div>
     </div>
-    <div class="actions mt-5 text-center">
-      <%= f.submit t('defaults.register'), class: 'btn btn-wide btn-primary' %>
+    <div class="actions mt-5 text-center normal-case">
+      <%= f.submit t('defaults.register'), class: 'btn btn-wide btn-neutral text-white' %>
     </div>
   <% end %>
 </div>

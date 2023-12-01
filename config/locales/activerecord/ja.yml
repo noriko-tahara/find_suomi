@@ -23,7 +23,7 @@ ja:
     errors:
       models:
         user:
-          format: "・%{attribute}: %{message}"
+          format: "%{attribute}: %{message}"
           blank: '必須項目です。'
           attributes:
             name:

@@ -1,14 +1,19 @@
-<div class="p-2 w-full">
-  <div class="mx-auto max-w-xs">
+<div class="mt-10 mb-14 w-full">
+  <div class="mx-auto max-w-sm">
     <div class="flex flex-col text-center w-full mb-8">
       <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
     </div>
     <%= form_with url: password_resets_path, local: true, method: :post do |f| %>
-      <div class="my-6">
-        <%= f.label :email, class: 'mb-1 block text-sm font-medium text-gray-700'%>
+      <div class="mt-14 mb-3">
+        <%= f.label :email, User.human_attribute_name(:email), class: 'mb-1 block text-sm font-medium text-gray-950'%>
         <%= f.email_field :email, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500' %>
       </div>
-      <%= f.submit t('defaults.send'), class: 'btn btn-primary btn-sm flex mx-auto max-w-md items-center justify-center text-center px-10 mt-10' %>
+      <div class="actions mt-5 text-center normal-case">
+        <%= f.submit t('defaults.send'), class: 'btn btn-wide btn-neutral text-white' %>
+      </div>
     <% end %>
+    <div class='my-5 text-center text-sm text-gray-500 label-text-alt link link-hover'>
+      <%= link_to t('defaults.to_login_page'), login_path %>
+    </div>
   </div>
 </div>
