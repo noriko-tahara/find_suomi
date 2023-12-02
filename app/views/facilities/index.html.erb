@@ -1,13 +1,11 @@
-<div class="container px-4 md:container md:mx-auto">
+<div class="container px-4 mt-10 mb-14 w-full md:container md:mx-auto">
   <!-- 施設一覧 -->
-  <div class="p-3">
-    <% if @facilities.present? %>
-      <div class='text-center pb-4'>
-        <%= "検索結果: #{@facilities.count}件" %>
-      </div>
-      <%= render @facilities %>
-    <% else %>
-      <p class='text-center pb-4'><%= t('.no_result') %></p>
-    <% end %>
-  </div>
+  <% if @facilities.present? %>
+    <div class='font-medium text-lg text-center mb-4'>
+      <%= "検索結果: #{@facilities.count}件" %>
+    </div>
+    <%= render @facilities %>
+  <% else %>
+    <p class='text-center pb-4'><%= t('.no_result') %></p>
+  <% end %>
 </div>

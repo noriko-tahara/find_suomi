@@ -1,9 +1,9 @@
-<div class="card w-4/5 bg-base-100 mx-auto mb-10 border border-slate-500">
-  <div class="card-body">
-    <div class="font-semibold text-center text-xl mb-1">
+<div class="card mx-auto max-w-2xl my-10 border border-slate-500">
+  <div class="card-body mx-6">
+    <div class="font-semibold text-center text-xl">
       <%= link_to facility.name, facility_path(facility) %>
     </div>
-    <span class="absolute top-0 right-0 w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+    <span class="absolute top-2 right-2 w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
       <% if logged_in? %>
         <%= render 'bookmark_button', { facility: facility } %>
       <% else %>
@@ -11,28 +11,28 @@
       <% end %>
     </span>
     <!-- ジャンル表示 -->
-    <h5 class="mb-1 text-right">
+    <div class="mb-3 text-right">
       <% facility.genres.each do |genre| %>
         <span class="inline-flex items-center rounded-md bg-gray-50 me-1 px-2.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10" >
           <%= genre.name %>
         </span>
       <% end %>
-    </h5>
-    <table class="mx-auto">
-      <tbody>
-        <tr>
-          <td class="text-sm font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
-          <td class="mt-1 text-xs font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.address %></td>
-        </tr>
-        <tr>
-          <td class="text-sm font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
-          <td class="mt-1 text-xs font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.opening_hour %></td>
-        </tr>
-        <tr>
-          <td class="text-sm font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
-          <td class="mt-1 text-xs font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.closed_on %></td>
-        </tr>
-      </tbody>
-    </table>
+    </div>
+    <div class="border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <div class="p-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium font-semibold leading-6 text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.address %></td>
+        </div>
+        <div class="p-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium font-semibold leading-6 text-gray-900"<%= t(Facility.human_attribute_name(:opening_hour)) %></td>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.opening_hour %></td>
+        </div>
+        <div class="p-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium font-semibold leading-6 text-gray-900"<%= t(Facility.human_attribute_name(:closed_on)) %></td>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.closed_on %></td>
+        </div>
+      </dl>
+    </div>
   </div>
 </div>
