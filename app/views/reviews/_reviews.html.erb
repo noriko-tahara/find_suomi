@@ -1,9 +1,7 @@
-<div class="row">
-  <div class="flex flex-col w-5/6 justify-center mx-auto">
-    <% if @reviews.present? %>
-      <%= render @reviews %>
-    <% else %>
-      <p class="text-center"><%= t('reviews.no_result') %></p>
-    <% end %>
-  </div>
+<div class="flex flex-col mx-auto justify-center items-center">
+  <% if @reviews.present? %>
+    <%= render @reviews %>
+  <% else %>
+    <p class="text-center"><%= t('reviews.no_result') %></p>
+  <% end %>
 </div>
