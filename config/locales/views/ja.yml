@@ -8,6 +8,7 @@ ja:
     edit: '編集'
     delete: '削除'
     update: '更新'
+    to_top: 'トップページ'
     back: '前のページに戻る'
     to_login_page: 'ログインページへ'
     password_reset: 'パスワード再設定手続きのご案内'

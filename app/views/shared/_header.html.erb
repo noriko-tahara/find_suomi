@@ -1,18 +1,21 @@
 <header>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl" href="/">Find Suomi</a>
+      <a class="btn btn-ghost hover:bg-transparent normal-case text-xl text-gray-950" href="/">Find Suomi</a>
     </div>
     <div class="flex-none gap-2">
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost">
-          <p>メニュー</p>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </label>
-        <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-44">
+          <li>
+            <%= link_to t('defaults.to_top'), root_path, class: 'nav-link' %>
+          </li>
           <li>
             <%= link_to t('profiles.show.title'), profile_path, class: 'nav-link' %>
           </li>
-          <li class='nav-item'>
+          <li>
             <%= link_to t('facilities.bookmarks.title'), bookmarks_facilities_path, class: 'nav-link' %>
           </li>
           <li>
