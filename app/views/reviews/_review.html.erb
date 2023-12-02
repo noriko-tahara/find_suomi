@@ -1,13 +1,9 @@
 <div class="card mx-auto w-4/5 max-w-xl p-4 my-2 border border-slate-500">
   <div class="w-full m-4 items-center lg:mx-auto rounded-xl">
     <div class="flex flex-row">
-      <% if review.user.avatar.present? %>
+      <div class="ml-2 mr-1">
         <%= image_tag review.user.avatar_url, class: 'avatar rounded-xl w-12 h-12'%>
-      <% else %>
-        <svg class="h-12 w-12 text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-      <% end %>
+      </div>
       <div class="ml-3 mt-4">
         <span class="text-sm font-semibold tracking-widest text-blue-500"><%= review.user.name %></span>
         <span class="text-xs text-light text-gray-500 ml-1"><%= review.updated_at.strftime('%Y/%m/%d %H:%M')%></span>
