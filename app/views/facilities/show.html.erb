@@ -1,8 +1,8 @@
 <div class="flex flex-col">
-  <div class="card w-5/6 mx-auto mt-5 mb-10 border border-slate-500">
-    <div class="mx-auto px-1 py-5 sm:px-1 max-w-3xl md:rounded-3xl md:px-20">
-      <h1 class="font-semibold text-center text-xl mt-2 mb-2"><%= @facility.name %></h1>
-      <span class="absolute top-0 right-0 w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+  <div class="card mx-auto max-w-screen-md mt-20 mb-10 my-4 md:my-6 border border-slate-500">
+    <div class="py-8 px-10 sm:px-8 max-w-3xl md:rounded-3xl md:px-20">
+      <h1 class="font-semibold text-center text-2xl my-2"><%= @facility.name %></h1>
+      <span class="absolute top-4 right-4 w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
         <% if logged_in? %>
           <%= render 'bookmark_button', { facility: @facility } %>
         <% else %>
@@ -10,9 +10,9 @@
         <% end %>
       </span>
       <!-- ジャンル表示 -->
-      <h2 class="mb-1 py-1 text-right">
+      <h2 class="my-4 pr-5 text-right">
         <% @facility.genres.each do |genre| %>
-          <span class="inline-flex items-center rounded-md bg-gray-50 me-1 px-2.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10" >
+          <span class="inline-flex items-center rounded-md bg-gray-50 me-1 px-2.5 py-0.5 text-sm font-medium text-gray-600 ring-1 ring-inset ring-gray-400" >
             <%= genre.name %>
           </span>
         <% end %>
@@ -21,25 +21,25 @@
       <table class="table mb-8 mt-5 mx-auto">
         <tbody class="w-11/12 m-auto">
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:description)) %></td>
-            <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.description %></td>
+            <td class="text-normal font-medium font-semibold font-semibold leading-5 text-gray-900"><%= t(Facility.human_attribute_name(:description)) %></td>
+            <td class="mt-1 text-sm font-light leading-5 text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.description %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
+            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.opening_hour %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
+            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.closed_on %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:website)) %></td>
-            <td class="mt-1 text-sm font-light leading-tight text-gray-700 sm:col-span-2 sm:mt-0">
+            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:website)) %></td>
+            <td class="mt-1 text-sm font-light leading-tight text-blue-700 sm:col-span-2 sm:mt-0">
               <%= link_to @facility.website, @facility.website, target: "_blank", rel: "noopener" %>
             </td>
           </tr>
           <tr>
-            <td class="text-normal font-medium leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
+            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.address %></td>
           </tr>
         </tbody>
@@ -51,25 +51,24 @@
   </div>
 
   <!-- 口コミ表示 -->
-  <h2 class="text-center font-semibold mb-3"><%= t('activerecord.models.review') %></h2>
-  <% if logged_in? %>
-    <!-- 口コミ一覧 -->
-    <%= render 'reviews/reviews', { reviews: @reviews } %>
+  <h2 class="text-center text-xl font-semibold"><%= t('activerecord.models.review') %></h2>
+  <div class="mt-8 mb-14">
+    <% if logged_in? %>
+      <!-- 口コミ一覧 -->
+      <%= render 'reviews/reviews', { reviews: @reviews } %>
 
-    <!-- 口コミ投稿 -->
-    <button class="flex justify-center mt-10 mb-5" >
-      <%= link_to t('reviews.post_review'),  new_facility_review_path(@facility), class: 'btn bg-transparent border-gray-800 btn-sm w-max h-min' %>
-    </button>
-  <% else %>
-    <div class="flex justify-center text-center w-1/2 mx-auto">
-      <%= link_to login_path, class: 'btn no-animation btn-sm' do %>
-        <p><%= t('reviews.login_to_post_reviews') %></p>
-      <% end %>
-    </div>
-  <% end %>
-
-  <!-- 検索結果一覧に戻る -->
-  <%= render 'shared/back_to_previous_page' %>
+      <!-- 口コミ投稿 -->
+      <button class="flex mx-auto mt-10 mb-5" >
+        <%= link_to t('reviews.post_review'),  new_facility_review_path(@facility), class: 'btn btn-wide h-min bg-transparent border-gray-800 hover:bg-gray-100 focus:ring focus:ring-gray-900' %>
+      </button>
+    <% else %>
+      <div class="flex justify-center text-center mx-auto">
+        <%= link_to login_path, class: 'btn btn-neutral btn-wide h-min text-white' do %>
+          <p><%= t('reviews.login_to_post_reviews') %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <!-- Googleマップ表示用の Javascript -->
