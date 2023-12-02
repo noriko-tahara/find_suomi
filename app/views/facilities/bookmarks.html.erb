@@ -1,18 +1,14 @@
 <!-- ブックマーク一覧 -->
-<div class="container sm px-4 md:container md:mx-auto">
-  <div class="grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
-    <div class="text-center">
-      <h1 class="font-semibold"><%= t('.title') %></h1>
-    </div>
-    <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
-      <% if @bookmark_facilities.present? %>
-        <div class="flex flex-col justify-between flex-1">
-          <%= render partial: 'facility', collection: @bookmark_facilities %>
-        </div>
-      <% else %>
-        <p class="text-center"><%= t('.no_result') %></p>
-      <% end %>
-    </div>
-    <%= render 'shared/back_to_previous_page' %>
+<div class="container px-4 mt-10 mb-14 w-full md:container md:mx-auto">
+  <div class="text-center">
+    <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
   </div>
+  <% if @bookmark_facilities.present? %>
+    <div class='font-medium text-lg text-center mb-4'>
+      <%= "#{@bookmark_facilities.count}件" %>
+    </div>
+    <%= render partial: 'facility', collection: @bookmark_facilities %>
+  <% else %>
+    <p class="text-center pb-4"><%= t('.no_result') %></p>
+  <% end %>
 </div>
