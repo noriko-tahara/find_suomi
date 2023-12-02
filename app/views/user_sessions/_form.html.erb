@@ -3,11 +3,11 @@
     <div class="flex flex-col">
       <div class="my-3">
         <%= f.label :email, User.human_attribute_name(:email), class: 'my-1 block text-sm font-medium text-gray-950' %>
-        <%= f.text_field :email, id: 'email', class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500', autocomplete: 'email' %>
+        <%= f.text_field :email, id: 'email', class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50', autocomplete: 'email' %>
       </div>
       <div class="my-3">
         <%= f.label :password, User.human_attribute_name(:password), class: 'my-1 block text-sm font-medium text-gray-950'  %>
-        <%= f.password_field :password, id: 'password', class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500', autocomplete: 'off' %>
+        <%= f.password_field :password, id: 'password', class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50', autocomplete: 'off' %>
         <%= link_to t('user_sessions.new.password_forget'), new_password_reset_path, class: 'mt-2 label-text-alt link text-gray-500' %>
       </div>
     </div>
