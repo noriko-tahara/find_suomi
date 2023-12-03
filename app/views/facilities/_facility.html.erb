@@ -20,16 +20,16 @@
     </div>
     <div class="border-t border-gray-100">
       <dl class="divide-y divide-gray-100">
-        <div class="p-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium font-semibold leading-6 text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
+        <div class="p-2 sm:grid sm:grid-cols-3 sm:gap-1 sm:px-0">
+          <dt class="text-sm font-medium font-semibold leading-6"><%= t(Facility.human_attribute_name(:address)) %></td>
           <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.address %></td>
         </div>
         <div class="p-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium font-semibold leading-6 text-gray-900"<%= t(Facility.human_attribute_name(:opening_hour)) %></td>
+          <dt class="text-sm font-medium font-semibold leading-6"<%= t(Facility.human_attribute_name(:opening_hour)) %></td>
           <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.opening_hour %></td>
         </div>
         <div class="p-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium font-semibold leading-6 text-gray-900"<%= t(Facility.human_attribute_name(:closed_on)) %></td>
+          <dt class="text-sm font-medium font-semibold leading-6"<%= t(Facility.human_attribute_name(:closed_on)) %></td>
           <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><%= facility.closed_on %></td>
         </div>
       </dl>

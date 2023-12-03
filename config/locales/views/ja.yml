@@ -10,6 +10,7 @@ ja:
     update: '更新'
     to_top: 'トップページ'
     back: '前のページに戻る'
+    back_to_search: '検索ページへ戻る'
     to_login_page: 'ログインページへ'
     password_reset: 'パスワード再設定手続きのご案内'
     message:
@@ -23,6 +24,7 @@ ja:
       require_login: 'ログインしてください'
   facilities:
     index:
+      title: '検索結果一覧'
       no_result: '該当する施設はありませんでした'
     bookmarks:
       title: 'ブックマーク一覧'

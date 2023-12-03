@@ -1,7 +1,7 @@
 <div class="p-2 w-full">
   <div class="mx-auto max-w-xs">
     <div class="flex flex-col text-center w-full mb-8">
-      <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
+      <h1 class="text-2xl font-medium font-semibold mb-4 sm:text-xl"><%= t('.title') %></h1>
     </div>
     <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>

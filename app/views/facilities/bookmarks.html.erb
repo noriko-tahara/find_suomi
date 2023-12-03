@@ -1,7 +1,7 @@
 <!-- ブックマーク一覧 -->
 <div class="container px-4 mt-10 mb-14 w-full md:container md:mx-auto">
   <div class="text-center">
-    <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
+    <h1 class="text-2xl font-medium font-semibold mb-4 sm:text-xl"><%= t('.title') %></h1>
   </div>
   <% if @bookmark_facilities.present? %>
     <div class='font-medium text-lg text-center mb-4'>
@@ -9,6 +9,8 @@
     </div>
     <%= render partial: 'facility', collection: @bookmark_facilities %>
   <% else %>
-    <p class="text-center pb-4"><%= t('.no_result') %></p>
+    <div class="mt-20 text-center">
+      <p><%= t('.no_result') %></p>
+    </div>
   <% end %>
 </div>

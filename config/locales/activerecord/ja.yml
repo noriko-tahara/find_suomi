@@ -7,7 +7,7 @@ ja:
         facility:
           name: '施設名'
           description: '紹介'
-          opening_hour: '開店時間'
+          opening_hour: '営業時間'
           closed_on: '休業日'
           website: 'Website/SNS'
           address: '住所'

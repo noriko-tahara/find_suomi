@@ -1,7 +1,7 @@
 <div class="container px-4 mt-10 mb-14 w-full md:container md:mx-auto">
   <div class="relative mx-auto max-w-sm">
     <div class="text-center">
-      <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
+      <h1 class="text-2xl font-medium font-semibold mb-4 sm:text-xl"><%= t('.title') %></h1>
     </div>
     <div class="absolute top-5 right-2">
       <%= link_to edit_profile_path do %>
@@ -13,11 +13,11 @@
     </div>
     <div class="text-center my-8">
       <div class="my-6">
-        <h2 class="font-semibold mb-3 text-gray-950"><%= t(User.human_attribute_name(:name)) %><h2>
+        <h2 class="font-semibold mb-3"><%= t(User.human_attribute_name(:name)) %><h2>
         <p class="font-normal"><%= current_user.name %></p>
       </div>
       <div class="my-6">
-        <h2 class="font-semibold mb-3 text-gray-950"><%= t(User.human_attribute_name(:email)) %></h2>
+        <h2 class="font-semibold mb-3"><%= t(User.human_attribute_name(:email)) %></h2>
         <p class="font-normal"><%= current_user.email %></p>
       </div>
     </div>

@@ -21,26 +21,26 @@
       <table class="table mb-8 mt-5 mx-auto">
         <tbody class="w-11/12 m-auto">
           <tr>
-            <td class="text-normal font-medium font-semibold font-semibold leading-5 text-gray-900"><%= t(Facility.human_attribute_name(:description)) %></td>
-            <td class="mt-1 text-sm font-light leading-5 text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.description %></td>
+            <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:description)) %></td>
+            <td class="mt-1 text-sm font-light leading-5 sm:col-span-2 sm:mt-0"><%= @facility.description %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
-            <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.opening_hour %></td>
+            <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
+            <td class="mt-1 text-sm font-light leading-tight sm:col-span-2 sm:mt-0"><%= @facility.opening_hour %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
-            <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.closed_on %></td>
+            <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
+            <td class="mt-1 text-sm font-light leading-tight sm:col-span-2 sm:mt-0"><%= @facility.closed_on %></td>
           </tr>
           <tr>
-            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:website)) %></td>
+            <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:website)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-blue-700 sm:col-span-2 sm:mt-0">
               <%= link_to @facility.website, @facility.website, target: "_blank", rel: "noopener" %>
             </td>
           </tr>
           <tr>
-            <td class="text-normal font-medium font-semibold leading-tight text-gray-900"><%= t(Facility.human_attribute_name(:address)) %></td>
-            <td class="mt-1 text-sm font-light leading-tight text-gray-900 sm:col-span-2 sm:mt-0"><%= @facility.address %></td>
+            <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:address)) %></td>
+            <td class="mt-1 text-sm font-light leading-tight sm:col-span-2 sm:mt-0"><%= @facility.address %></td>
           </tr>
         </tbody>
       </table>
@@ -52,14 +52,14 @@
 
   <!-- 口コミ表示 -->
   <h2 class="text-center text-xl font-semibold"><%= t('activerecord.models.review') %></h2>
-  <div class="mt-8 mb-14">
+  <div class="mt-8 mb-6">
     <% if logged_in? %>
       <!-- 口コミ一覧 -->
       <%= render 'reviews/reviews', { reviews: @reviews } %>
 
       <!-- 口コミ投稿 -->
-      <button class="flex mx-auto mt-10 mb-5" >
-        <%= link_to t('reviews.post_review'),  new_facility_review_path(@facility), class: 'btn btn-wide h-min bg-transparent border-gray-800 hover:bg-gray-100 focus:ring focus:ring-gray-900' %>
+      <button class="flex mx-auto mt-10" >
+        <%= link_to t('reviews.post_review'),  new_facility_review_path(@facility), class: 'btn btn-wide btn-outline' %>
       </button>
     <% else %>
       <div class="flex justify-center text-center mx-auto">
@@ -68,6 +68,10 @@
         <% end %>
       </div>
     <% end %>
+  </div>
+
+  <div class="flex mx-auto justify-center mt-4 mb-14">
+    <%= link_to t('defaults.back_to_search'), root_path, class: 'btn btn-ghost btn-sm font-normal px-4' %>
   </div>
 </div>
 

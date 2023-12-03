@@ -1,11 +1,11 @@
 <div class="mt-10 mb-14 w-full">
   <div class="mx-auto max-w-sm">
     <div class="flex flex-col text-center w-full mb-8">
-      <h1 class="sm:text-xl text-2xl font-medium title-font font-semibold mb-4 text-gray-900"><%= t('.title') %></h1>
+      <h1 class="text-2xl font-medium font-semibold mb-4 sm:text-xl"><%= t('.title') %></h1>
     </div>
     <%= form_with url: password_resets_path, local: true, method: :post do |f| %>
       <div class="mt-14 mb-3">
-        <%= f.label :email, User.human_attribute_name(:email), class: 'mb-1 block text-sm font-medium text-gray-950'%>
+        <%= f.label :email, User.human_attribute_name(:email), class: 'mb-1 block text-sm font-medium'%>
         <%= f.email_field :email, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50' %>
       </div>
       <div class="actions mt-5 text-center normal-case">
