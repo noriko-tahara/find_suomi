@@ -8,7 +8,10 @@ ja:
     edit: '編集'
     delete: '削除'
     update: '更新'
+    to_top: 'トップページ'
     back: '前のページに戻る'
+    back_to_search: '検索ページへ戻る'
+    to_login_page: 'ログインページへ'
     password_reset: 'パスワード再設定手続きのご案内'
     message:
       posted: "%{item}を投稿しました"
@@ -18,8 +21,10 @@ ja:
       confirm_delete: "削除しますか？"
       deleted: "削除しました"
       not_authorized: 'アクセス権限がありません'
+      require_login: 'ログインしてください'
   facilities:
     index:
+      title: '検索結果一覧'
       no_result: '該当する施設はありませんでした'
     bookmarks:
       title: 'ブックマーク一覧'
@@ -51,7 +56,6 @@ ja:
   users:
     new:
       title: 'ユーザー登録'
-      to_login_page: 'ログインページへ'
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'

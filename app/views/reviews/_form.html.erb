@@ -2,21 +2,23 @@
   <div class="mx-auto">
     <%= form_with model: review, url: [facility, review], local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :body, class: 'mb-1 block text-sm font-medium text-gray-700' %>
+      <%= f.label :body, class: 'my-1 block text-sm font-medium' %>
       <%= f.text_area :body,
-            class: 'w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out',
-            row: 4, placeholder: Review.human_attribute_name(:body) %>
+            class: 'block w-full bg-gray-100 bg-opacity-50 rounded border border-gray-400 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out',
+            placeholder: Review.human_attribute_name(:body)%>
       <div class="my-6", data-controller="preview-image">
-        <%= f.label :review_image, class: 'mb-1 block text-sm font-medium text-gray-700' %>
+        <%= f.label :review_image, class: 'my-1 block text-sm font-medium' %>
         <%= f.file_field :review_image, accept: 'image/*',
               data: { action: 'change->preview-image#preview' },
-              class: 'block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:bg-gray-100 file:me-4 file:py-2 file:px-4' %>
+              class: 'block border border-gray-400 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:bg-gray-200 file:me-4 file:py-2 file:px-4' %>
         <%= f.hidden_field :image_cache %>
       </div>
-      <div class="my-3">
-        <%= image_tag review.review_image.url, id: 'preview', size: '150x150' %>
+      <div class="flex justify-center my-3">
+        <%= image_tag review.review_image.url, id: 'preview', size: '200x200' %>
       </div>
-      <%= f.submit t('defaults.post'), class: 'btn btn-primary btn-sm flex mx-auto max-w-md items-center justify-center text-center px-10 mt-10' %>
+      <div class="actions mt-10 text-center normal-case">
+        <%= f.submit t('defaults.post'), class: 'btn btn-wide btn-neutral text-white' %>
+      </div>
     <% end %>
   </div>
 </div>
