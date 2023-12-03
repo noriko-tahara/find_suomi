@@ -78,4 +78,6 @@
 https://www.figma.com/file/mpgeLXkfll6hqy0W7vDsyJ/Screen-Transition-Diagram?type=design&node-id=0%3A1&mode=design&t=eQTH4c5TuOo84N1a-1
 
 ### ■ ER図
+![er_diagram drawio](https://github.com/noriko-tahara/find_suomi/assets/116807250/ba6eafe8-b8c3-4e96-acc1-38aa9567c269)
+
 https://gyazo.com/9bd140b7aa56b89146af9ec04488ec59
