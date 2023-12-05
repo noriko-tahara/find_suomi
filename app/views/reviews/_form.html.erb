@@ -1,5 +1,5 @@
 <div class="p-2 w-full">
-  <div class="mx-auto">
+  <div class="mx-4">
     <%= form_with model: review, url: [facility, review], local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :body, class: 'my-1 block text-sm font-medium' %>
