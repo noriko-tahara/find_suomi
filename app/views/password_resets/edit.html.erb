@@ -1,23 +1,25 @@
-<div class="p-2 w-full">
-  <div class="mx-auto max-w-xs">
+<div class="mt-10 mx-4 sm:mx-auto sm:w-full sm:max-w-sm">
+  <div class="mx-auto max-w-sm">
     <div class="flex flex-col text-center w-full mb-8">
       <h1 class="text-2xl font-medium font-semibold mb-4 sm:text-xl"><%= t('.title') %></h1>
     </div>
     <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="my-6">
-        <%= f.label :email, User.human_attribute_name(:email), class: 'mb-1 block text-sm font-medium text-gray-700'%>
+        <%= f.label :email, User.human_attribute_name(:email), class: 'my-1 block text-sm font-medium' %>
         <%= @user.email%>
       </div>
       <div class="my-6">
-        <%= f.label :password, class: 'mb-1 block text-sm font-medium text-gray-700'%>
+        <%= f.label :password, User.human_attribute_name(:password), class: 'my-1 block text-sm font-medium' %>
         <%= f.password_field :password, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50' %>
       </div>
       <div class="my-6">
-        <%= f.label :password_confirmation, class: 'mb-1 block text-sm font-medium text-gray-700'%>
+        <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation), class: 'my-1 block text-sm font-medium' %>
         <%= f.password_field :password_confirmation, class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50' %>
       </div>
-      <%= f.submit t('defaults.update'), class: 'btn btn-primary btn-sm flex mx-auto max-w-md items-center justify-center text-center px-10 mt-10' %>
+      <div class="actions mt-8 text-center normal-case">
+        <%= f.submit t('defaults.update'), class: 'btn btn-wide btn-neutral text-white' %>
+      </div>
     <% end %>
   </div>
 </div>

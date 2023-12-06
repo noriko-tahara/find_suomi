@@ -1,6 +1,6 @@
-<div class="flex flex-col">
-  <div class="card mx-auto max-w-screen-md mt-20 mb-10 my-4 md:my-6 border border-slate-500">
-    <div class="py-8 px-10 sm:px-8 max-w-3xl md:rounded-3xl md:px-20">
+<div class="container flex flex-col mx-auto items-center mt-4">
+  <div class="card w-11/12 max-w-3xl mt-10 mb-10 border border-slate-500">
+    <div class="py-8 px-3 max-w-3xl sm:px-12">
       <h1 class="font-semibold text-center text-2xl my-2"><%= @facility.name %></h1>
       <span class="absolute top-4 right-4 w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
         <% if logged_in? %>
@@ -18,15 +18,15 @@
         <% end %>
       </h2>
       <!-- 施設情報詳細 -->
-      <table class="table mb-8 mt-5 mx-auto">
-        <tbody class="w-11/12 m-auto">
+      <table class="table mx-auto w-9/12 max-w-2xl">
+        <tbody>
           <tr>
             <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:description)) %></td>
-            <td class="mt-1 text-sm font-light leading-5 sm:col-span-2 sm:mt-0"><%= @facility.description %></td>
+            <td class="text-sm font-light leading-5 whitespace-normal"><%= @facility.description %></td>
           </tr>
           <tr>
             <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:opening_hour)) %></td>
-            <td class="mt-1 text-sm font-light leading-tight sm:col-span-2 sm:mt-0"><%= @facility.opening_hour %></td>
+            <td class="mt-1 text-sm font-light leading-tight text-justify sm:col-span-2 sm:mt-0"><%= @facility.opening_hour %></td>
           </tr>
           <tr>
             <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:closed_on)) %></td>
@@ -35,7 +35,7 @@
           <tr>
             <td class="text-normal font-medium font-semibold leading-tight"><%= t(Facility.human_attribute_name(:website)) %></td>
             <td class="mt-1 text-sm font-light leading-tight text-blue-700 sm:col-span-2 sm:mt-0">
-              <%= link_to @facility.website, @facility.website, target: "_blank", rel: "noopener" %>
+              <%= link_to @facility.website, @facility.website, target: :_blank, rel: 'noopener noreferrer' %>
             </td>
           </tr>
           <tr>
@@ -44,7 +44,7 @@
           </tr>
         </tbody>
       </table>
-      <div class="mx-auto px-1 py-1 border sm:px-1 max-w-3xl items-center">
+      <div class="mx-auto p-2 border sm:px-4 max-w-3xl items-center">
         <div id="map"></div>
       </div>
     </div>
@@ -52,30 +52,28 @@
 
   <!-- 口コミ表示 -->
   <h2 class="text-center text-xl font-semibold"><%= t('activerecord.models.review') %></h2>
-  <div class="mt-8 mb-6">
-    <% if logged_in? %>
-      <!-- 口コミ一覧 -->
-      <%= render 'reviews/reviews', { reviews: @reviews } %>
+  <% if logged_in? %>
+    <!-- 口コミ一覧 -->
+    <%= render 'reviews/reviews', { reviews: @reviews } %>
 
-      <!-- 口コミ投稿 -->
-      <button class="flex mx-auto mt-10" >
-        <%= link_to t('reviews.post_review'),  new_facility_review_path(@facility), class: 'btn btn-wide btn-outline' %>
-      </button>
-    <% else %>
-      <div class="flex justify-center text-center mx-auto">
-        <%= link_to login_path, class: 'btn btn-neutral btn-wide h-min text-white' do %>
-          <p><%= t('reviews.login_to_post_reviews') %></p>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+    <!-- 口コミ投稿 -->
+    <button class="flex mx-auto mt-6" >
+      <%= link_to t('reviews.post_review'),  new_facility_review_path(@facility), class: 'btn btn-wide btn-neutral text-white' %>
+    </button>
+  <% else %>
+    <div class="flex justify-center text-center mx-auto">
+      <%= link_to login_path, class: 'btn btn-neutral btn-wide h-min text-white' do %>
+        <p><%= t('reviews.login_to_post_reviews') %></p>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="flex mx-auto justify-center mt-4 mb-14">
     <%= link_to t('defaults.back_to_search'), root_path, class: 'btn btn-ghost btn-sm font-normal px-4' %>
   </div>
 </div>
 
-<!-- Googleマップ表示用の Javascript -->
+<!-- Googleマップ表示用Javascript -->
 <script>
   function initMap(){
     // 地図の位置情報(緯度・経度)を取得
