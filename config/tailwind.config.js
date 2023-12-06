@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        notosans: ['Noto Sans JP', sans-serif],
+        notosans: ['Noto Sans JP', 'sans-serif'],
       },
     },
   },
