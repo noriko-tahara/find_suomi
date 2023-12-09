@@ -12,6 +12,8 @@
     <div class="absolute top-2 right-2">
       <% if current_user.own?(review) %>
         <%= render 'reviews/crud_menus', review: review %>
+      <% else %>
+        <%= render 'reviews/like_button', review: review %>
       <% end %>
     </div>
     <div class="flex mx-auto mt-2">
