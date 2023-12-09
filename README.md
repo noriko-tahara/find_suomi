@@ -66,7 +66,7 @@ https://find-suomi.fly.dev/
 - Ruby on Rails 7.0.8
 
 ##### フロントエンド
-- Tailwinsd CSS
+- Tailwind CSS
 - daisyUI
 - Hotwire (Turbo, Stimulus)
 
