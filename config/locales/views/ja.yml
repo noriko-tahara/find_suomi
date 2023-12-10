@@ -8,6 +8,7 @@ ja:
     edit: '編集'
     delete: '削除'
     update: '更新'
+    cancel: 'キャンセル'
     to_top: 'トップページ'
     back: '前のページに戻る'
     back_to_search: '検索ページへ戻る'
@@ -59,6 +60,11 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    confirm_withdraw:
+      title: '退会'
+      withdraw: '退会する'
+    destroy:
+      success: '退会しました'
   user_mailer:
     reset_password:
       subject: 'パスワード変更'

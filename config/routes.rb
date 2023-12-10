@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
   get 'sign_up', to: 'users#new'
+  get 'confirm_withdraw', to: 'users#confirm_withdraw'
 
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'terms_of_use', to: 'static_pages#terms_of_use'
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
       get :bookmarks
     end
   end
-  resources :users, only: %i[new create]
+  resources :users, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
   resources :password_resets, only: %i[new create edit update]
 
