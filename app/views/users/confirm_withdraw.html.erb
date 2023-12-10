@@ -1,0 +1,23 @@
+<div class="mt-10 mb-14 w-full">
+  <div class="mx-auto max-w-sm">
+    <div class="flex flex-col text-center w-full mb-8">
+      <h1 class="text-2xl font-medium font-semibold mb-4 sm:text-xl"><%= t('.title') %></h1>
+    </div>
+    <div class="my-9">
+      <p class="text-base text-gray-950 text-center antialiased tracking-wide sm:mx-2">
+        退会するとブックマーク一覧が削除され、<span class="inline-block">口コミも閲覧できなくなります。</span>
+      </p>
+    </div>
+    <div class="my-9">
+      <p class="text-base text-gray-950 text-center antialiased tracking-wide sm:mx-2">
+        本当に退会しますか？
+      </p>
+    </div>
+    <div class="my-9 text-center">
+      <%= link_to t('.withdraw'), user_path(current_user), data: {turbo_method: :delete }%>
+    </div>
+    <div class="actions mt-10 text-center normal-case">
+      <%= link_to t('defaults.cancel'),profile_path, class: 'btn btn-wide btn-neutral text-white' %>
+    </div>
+  </div>
+</div>
