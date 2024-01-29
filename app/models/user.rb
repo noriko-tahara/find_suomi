@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_reviews, through: :likes, source: :review
 
-  validates :name, uniqueness: true, presence: true, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
@@ -43,5 +43,15 @@ class User < ApplicationRecord
 
   def like?(review)
     like_reviews.include?(review)
+  end
+
+  def self.guest
+    random_guest = SecureRandom.hex(10)
+    create!(
+      name: 'ゲストユーザー',
+      email: random_guest + '@example.com',
+      password: random_guest,
+      password_confirmation: random_guest,
+      role: 0)
   end
 end

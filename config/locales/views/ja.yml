@@ -73,8 +73,11 @@ ja:
       title: 'ログイン'
       to_register_page: 'ユーザー登録する'
       password_forget: 'パスワードをお忘れの方はこちら'
+      login_as_guest: 'ゲストログイン'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+    guest_login:
+      success: 'ゲストとしてログインしました'
